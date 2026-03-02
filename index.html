@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kevin Naranjo</title>
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <nav>
+    <div class="logo"><strong>DevKev</strong></div>
+    <div id="toolsBar">
+      <a href="#home">Home</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+    </div>
+    <button class="theme-toggle" onclick="toggleTheme()">Tema</button>
+  </nav>
+
+  <main>
+    <img src="img/img_fondo_difuminado.png" alt="imagen programación" id="imgFondo">
+
+    <section class="container" id="home">
+      <div class="intro"><strong id="typewriter"></strong></div>
+      <h1>Soy desarrollador web.</h1>
+      <p>
+          Tengo un enfonque full stack, apasionado por crear soluciones digitales funcionales,
+          intuitivas y estéticamente limpias. Combino conocimientos técnicos en lenguajes y tecnologías como HTML
+          , CSS, JavaScript, PHP y MySQL, con una mentalidad creativa y analítica.
+      </p>
+    </section>
+
+    <section class="container" id="skills">
+        <section>
+            <h2>Skills</h2>
+            <div class="skills">
+                <div class="skillcontainer" title="HTML5"><img src="img/html5.svg.png" alt="html_logo"></div>
+                <div class="skillcontainer" title="CSS"><img src="img/css.png" alt="css_logo"></div>
+                <div class="skillcontainer" title="JavaScript"><img src="img/js.png" alt="JavaScript_logo"></div>
+                <div class="skillcontainer" title="PHP"><img src="img/php.png" alt="PHP_logo"></div>
+                <div class="skillcontainer" title="Python"><img src="img/python.jpg" alt="Python_logo"></div>
+                <div class="skillcontainer" title="MySQL"><img src="img/mysql.png" alt="mysql_logo"></div>
+                <div class="skillcontainer" title="Lenguaje C"><img src="img/C.png" alt="C_logo"></div>
+                <div class="skillcontainer" title="C++"><img src="img/c++.png" alt="C++_logo"></div>
+                <div class="skillcontainer" title="JQuery"><img src="img/jquery.png" alt="JQuery_logo"></div>
+                <div class="skillcontainer" title="Bootstrap"><img src="img/bootstrap.png" alt="Bootstrap_logo"></div>
+            </div>
+        </section>
+    </section>
+
+    <section class="container" id="projects">
+        <section>
+            <h2>Projects</h2>
+            <div class="projectsContainer">
+                <a href="https://mateskev.com" target="_blank" >
+                    <h3>mateskev.com</h3>
+                    <p class="descrip">Sitio web con recursos didácticos matemáticos y reserva de tutorías virtuales.</p>
+                    <p class="tools">HMTL - CSS - JavaScript - PHP - MySQL - Bootstrap</p>
+                </a>
+                <a href="https://denaranjo.com" target="_blank">
+                    <h3>denaranjo.com</h3>
+                    <p class="descrip">Portafolio web profesional de un diseñador gráfico.</p>
+                    <p class="tools">HMTL - CSS - JavaScript</p>
+                </a>
+                <a href="https://helpercr.net/IANB" target="_blank">
+                    <h3>IANB</h3>
+                    <p class="descrip">Portafolio web profesional de un contador.</p>
+                    <p class="tools">HMTL - CSS - JavaScript - Bootstrap</p>
+                </a>
+                <a href="#" target="_blank">
+                    <h3>Sólidos platónicos</h3>
+                    <p class="descrip">Sitio web en desarrollo sobre los sólidos platónicos como TFG en matemáticas.</p>
+                    <p class="tools">HMTL - CSS - JavaScript - Bootstrap - Blender</p>
+                </a>
+            </div>
+        </section>
+    </section>
+
+    <section class="container" id="about" style="padding-bottom: 100px;">
+      <section>
+        <h2>About Me</h2>
+        <p>
+          La creatividad y la curiosidad siempre me han impulsado a aprender y entender lo que ocurre a mi alrededor.
+          Al descubrir el mundo de la programación, encontré una forma de poner en práctica mis conocimientos de manera 
+          inmediata y aplicar mi creatividad sin límites. Esta pasión me impulsó a formarme, primero, de forma autodidacta en diversos
+            lenguajes de programación y, después, de manera formal. <br>
+          Además de la programación, tengo un profundo interés por las matemáticas, no solo desde el aprendizaje,
+          sino también desde la enseñanza. Por ello obtuve el título en Enseñanza de las Matemáticas con Entornos Tecnológicos en el TEC de Costa Rica.
+        </p>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <a href="https://github.com/kevinnm770" target="_blank" class="social_network"><i class="fa-brands fa-square-github"></i> kevinnm770 </a>
+    <a href="https://www.linkedin.com/in/kevin-naranjo-mendoza-a0a70b312?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bud4fENkkQBacafr78lV3Uw%3D%3D" target="_blank" class="social_network"><i class="fa-brands fa-linkedin"></i> Kevin Naranjo Mendoza</a>
+    <a href="mailto:kevinnm770@gmail.com" target="_blank" class="social_network"><i class="fa-solid fa-envelope"></i> kevinnm770@gmail.com</a>
+  </footer>
+
+  <script>
+    const text = "Hola, me llamo Kevin Naranjo Mendoza.";
+    const speed = 100;
+    let index = 0;
+
+    function typeWriter() {
+        if (index < text.length) {
+        document.getElementById("typewriter").innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeWriter, speed);
+        }
+    }
+
+    window.addEventListener("DOMContentLoaded", typeWriter);
+
+    function toggleTheme() {
+      const currentTheme = document.documentElement.getAttribute("data-theme");
+      document.getElementById('imgFondo').src=currentTheme === "dark" ? "img/img_fondo_claro_difuminado.png" : "img/img_fondo_difuminado.png"
+      document.documentElement.setAttribute(
+        "data-theme",
+        currentTheme === "dark" ? "light" : "dark"
+      );
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    document.querySelectorAll("section").forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>

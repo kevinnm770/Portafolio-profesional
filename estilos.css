@@ -1,0 +1,246 @@
+:root {
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --accent-color: #cda4ff;
+    --color-border: #cda4ff80;
+}
+
+[data-theme="light"] {
+    --bg-color: #ffffff;
+    --text-color: #1a1a1a;
+    --accent-color: #ff9900;
+    --color-border: #ff99006b;
+}
+
+body {
+    margin: 0;
+    position: relative;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    scroll-behavior: smooth;
+}
+
+main{
+    background-color: var(--bg-color);
+    border-radius: 0 0 100px 100px;
+    width: 100%;
+    position: relative;
+}
+
+#imgFondo{
+    position: absolute;
+    max-width: 100%;
+    top: 0px;
+    left: 0;
+    opacity: 0.1;
+}
+
+.container {
+    padding: 4rem 2rem;
+    padding-bottom: 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.intro {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    text-transform: uppercase;
+}
+
+#typewriter::after {
+    content: "|";
+    animation: blink 0.7s infinite;
+    color: var(--accent-color);
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 0.5rem 0;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-color);
+    z-index: 1000;
+}
+
+nav .logo{
+    font-size: 25pt;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+nav a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.theme-toggle {
+    background: none;
+    border: 2px solid var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.skills, .projectsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.projectsContainer>a{
+    position: relative;
+    max-width: 200px;
+    height: max-content;
+    padding: 20px;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--bg-color);
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+@property --angulo{
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+
+.projectsContainer>a::before{
+    content: '';
+    position: absolute;
+    border-radius: 20px;
+    padding: 4px;
+    width: 100%;
+    height: 100%;
+    top: -4px;
+    left: -4px;
+    background: conic-gradient(from var(--angulo),var(--bg-color), var(--color-border), 
+                                var(--bg-color), var(--bg-color));
+    z-index: -1;
+    animation: rotateLight 5s linear infinite;
+}
+
+@keyframes rotateLight {
+    from { --angulo: 0deg; }
+    to { --angulo: 360deg; }
+}
+
+.descrip{
+    font-size: 10pt;
+}
+
+.projectsContainer>a:hover{
+    background-color: var(--accent-color);
+    color: black;
+    transform: rotate3d(1, 2, 0, 20deg);
+    box-shadow: -10px 10px 15px var(--color-border);
+}
+
+.projectsContainer > a:hover::before{
+    opacity: 0;
+    animation: none;
+    transition: opacity 0s ease-out;
+}
+
+.tools{
+    font-size: 10pt;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: var(--accent-color);
+    transition: all 0.5s ease;
+}
+
+.projectsContainer>a:hover .tools{
+    color: black;
+}
+
+.skillcontainer {
+    width: max-content;
+    height: 80px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.skillcontainer img {
+    height: 70px;
+    opacity: 0.8;
+}
+
+.skillcontainer:hover {
+    transform: scale(1.1);  
+}
+
+footer{
+    height: max-content;
+    width: 100%;
+    margin: 0;
+    margin-top: 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.social_network{
+    color: var(--bg-color);
+    font-size: 15pt;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 700px) {
+    #toolsBar{
+        display: none;
+    }
+    .skillcontainer img{
+        height: 50px;
+    }
+}
