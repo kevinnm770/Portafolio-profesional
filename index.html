@@ -42,10 +42,12 @@
                 <div class="skillcontainer" title="PHP"><img src="img/php.png" alt="PHP_logo"></div>
                 <div class="skillcontainer" title="Python"><img src="img/python.jpg" alt="Python_logo"></div>
                 <div class="skillcontainer" title="MySQL"><img src="img/mysql.png" alt="mysql_logo"></div>
+                <div class="skillcontainer" title="OracleApex"><img src="img/oracleApex.png" alt="OracleApex_logo"></div>
                 <div class="skillcontainer" title="Lenguaje C"><img src="img/C.png" alt="C_logo"></div>
                 <div class="skillcontainer" title="C++"><img src="img/c++.png" alt="C++_logo"></div>
                 <div class="skillcontainer" title="JQuery"><img src="img/jquery.png" alt="JQuery_logo"></div>
                 <div class="skillcontainer" title="Bootstrap"><img src="img/bootstrap.png" alt="Bootstrap_logo"></div>
+                <div class="skillcontainer" title="laravel12"><img src="img/Laravel.png" alt="laravel12_logo"></div>
             </div>
         </section>
     </section>
@@ -54,20 +56,25 @@
         <section>
             <h2>Projects</h2>
             <div class="projectsContainer">
+                <a href="https://helpercr.net/login.php" target="_blank" >
+                    <h3>Helpercr.net</h3>
+                    <p class="descrip">Aplicación web especializada al control financiero personal.</p>
+                    <p class="tools">HMTL - CSS - JavaScript - PHP - MySQL - Bootstrap</p>
+                </a>
+                <a href="https://www.kuvocr.com/login_register" target="_blank">
+                    <h3>Kuvocr.com</h3>
+                    <p class="descrip">Aplicación web especializada a la creación y ejecución de quices virtuales dinámicos.</p>
+                    <p class="tools">HMTL - CSS - JavaScript - PHP - MySQL - Bootstrap</p>
+                </a>
                 <a href="https://mateskev.com" target="_blank" >
-                    <h3>mateskev.com</h3>
+                    <h3>Mateskev.com</h3>
                     <p class="descrip">Sitio web con recursos didácticos matemáticos y reserva de tutorías virtuales.</p>
                     <p class="tools">HMTL - CSS - JavaScript - PHP - MySQL - Bootstrap</p>
                 </a>
                 <a href="https://denaranjo.com" target="_blank">
-                    <h3>denaranjo.com</h3>
+                    <h3>Denaranjo.com</h3>
                     <p class="descrip">Portafolio web profesional de un diseñador gráfico.</p>
                     <p class="tools">HMTL - CSS - JavaScript</p>
-                </a>
-                <a href="https://helpercr.net/IANB" target="_blank">
-                    <h3>IANB</h3>
-                    <p class="descrip">Portafolio web profesional de un contador.</p>
-                    <p class="tools">HMTL - CSS - JavaScript - Bootstrap</p>
                 </a>
                 <a href="#" target="_blank">
                     <h3>Sólidos platónicos</h3>
@@ -103,7 +110,7 @@
     const text = "Hola, me llamo Kevin Naranjo Mendoza.";
     const speed = 100;
     let index = 0;
-
+ 
     function typeWriter() {
         if (index < text.length) {
         document.getElementById("typewriter").innerHTML += text.charAt(index);
